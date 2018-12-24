@@ -29,21 +29,21 @@ function switchPath( pathStr ) {
         } else {
             if(lastX == null){
                 lastX = +a;
-                item.push( (+lastX).toFixed(1) );
+                item.push( (+lastX).toFixed(3) );
                 console.log(lastX, +a, a,  flag, 'key1')
             } else if(lastY == null){
                 lastY = +a;
-                item.push( (+lastY).toFixed(1)  );
+                item.push( (+lastY).toFixed(3)  );
                 console.log(lastY, +a, a,  flag, 'key2')
             } else if(flag == 0){
                 lastX += +a;
-                item.push( (+lastX).toFixed(1)  );
+                item.push( (+lastX).toFixed(3)  );
                 flag = 1;
                 console.log(lastX, +a, a, flag, 'key3')
             } else if(flag == 1){
                 
                 lastY += +a;
-                item.push( (+lastY).toFixed(1) );
+                item.push( (+lastY).toFixed(3) );
                 flag = 0;
                 console.log(lastY, +a, a, flag, 'key4')
             }
@@ -52,9 +52,19 @@ function switchPath( pathStr ) {
     return result;
 }
 
+// var path = 'M119.437,116.794s1.235,16.6,40.494,16.6c36.466,0,40.5,-16.6,40.5,-16.6V253.308H119.436V116.794Z';
 
-var path = 'M119.437,116.794s1.235,16.6,40.494,16.6c36.466,0,40.5,-16.6,40.5,-16.6V253.308H119.436V116.794Z';
+
+var path = `M119.437,116.794
+        s1.235,16.6, 40.494, 16.6
+        c36.4667,0,40.57,-16.6,40.57,-16.6
+        V253.308
+        s1.235, 16.6, -40.494 , 16.6
+        c-36.466,0,-40.5,-16.6,-40.5,-16.6
+        V116.794Z`;
 console.log(switchPath( path ))
 
-$('.zd-cls-3').attr('d', switchPath( path ) + 'Z');
+$('.zd-cls-3').attr('d', path);
+
+//s${-1.235}, ${16.6}, ${-40.494}, ${16.6}
 
