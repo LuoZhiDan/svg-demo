@@ -4,7 +4,8 @@
   "description": "实现上传文件",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "build": "webpack --config ./webpack.config.prod.js"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
   },
   "homepage": "https://github.com/LuoZhiDan/upload-fille#readme",
   "dependencies": {
+    "d3": "^5.7.0",
     "jquery": "^3.3.1"
   }
 }

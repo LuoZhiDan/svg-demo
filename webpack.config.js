@@ -5,6 +5,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
     mode: 'development',
     entry: {
+        libs: './libs.js',
         main: './index.js'
     },
     devServer: {
@@ -34,16 +35,6 @@ module.exports = {
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin()
     ],
-    /* resolve: {
-        alias: {
-            utils: 'common-utils-zdluoa',
-            config: __dirname + '/src/config',
-            cmp: __dirname + '/src/components',
-            img: __dirname + '/src/public/img',
-            mock: __dirname + '/src/public/mock',
-            svg: __dirname + '/src/public/svg'
-        }
-    }, */
     output: {
         path: __dirname + '/dist',
         filename: '[name].[hash].js',
